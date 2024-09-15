@@ -1,0 +1,213 @@
+.header {
+    background-color: navy;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    box-sizing: border-box;
+    flex-direction: row;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#brandname {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 65px;
+    margin: 0;
+}
+
+#tagline {
+    color: lightgreen;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    margin: 0;
+    padding-left: 10px;
+    font-weight: bolder;
+}
+
+.logo {
+    width: 160px;
+    height: 160px;
+    border-radius: 120px;
+}
+
+
+.sec-header {
+    background-color: lightskyblue;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list {
+    list-style-type: none;
+    gap: 60px;
+    display: flex;
+}
+
+.buttons {
+    width: 200px;
+    height: 42px;
+    background-color: blueviolet;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px;
+    border-color: blue;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.buttons:hover {
+    background-color: rgb(180, 138, 197);
+    transform: scale(1.05);
+    color: darkblue;
+    text-decoration: underline;
+}
+
+.main {
+    background-color: rgb(243, 167, 167);
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.left {
+    width: 45%;
+    height: 100%;
+    background-color: rgb(243, 167, 167);
+    padding-left: 30px;
+    text-align: left;
+}
+
+.content {
+    padding-top: 55px;
+}
+
+#content {
+    font-size: 20px;
+}
+
+.right {
+    width: 55%;
+    height: 100%;
+    background-color: rgb(243, 167, 167);
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    justify-content: center;
+    /* Vertically center the content */
+    align-items: center;
+}
+
+#heading {
+    font-size: 45px;
+    color: rgb(182, 19, 19);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cal {
+    width: 55%;
+    /* Adjust the width */
+    height: 95%;
+    /* Adjust the height */
+    background-color: rgb(189, 191, 192);
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    justify-content: center;
+    /* Center everything vertically */
+    align-items: center;
+    /* Center everything horizontally */
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: solid 4px black;
+    padding: 20px;
+    margin-left: 30px;
+}
+
+.display {
+    width: 90%; /* Adjust width for display */
+    height: 70px; /* Increase height for better visibility */
+    border: solid 3px rgb(117, 119, 121);
+    border-radius: 15px;
+    margin-bottom: 20px; /* Spacing between display and buttons */
+    text-align: right; /* Align text in the display to the right */
+    padding: 10px; /* Padding inside display */
+    font-size: 25px; /* Font size for numbers in display */
+    background-color: rgb(241, 232, 232);
+    overflow: hidden; /* Ensure text doesn't overflow */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+
+.signs {
+    width: 100%;
+    /* Make the table take full width */
+}
+
+.signs button {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    margin: 5px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.num-btn {
+    background-color: rgb(188, 232, 247);
+    /* Number buttons background color */
+}
+
+.num-btn:hover {
+    background-color: rgb(132, 178, 224);
+    /* Hover effect for number buttons */
+}
+
+.operator-btn {
+    background-color: rgb(154, 241, 154);
+    /* Operator buttons background color */
+}
+
+.operator-btn:hover {
+    background-color: rgb(78, 189, 78);
+    /* Hover effect for operator buttons */
+}
+
+/* Special buttons like AC and C */
+.special-btn {
+    background-color: red;
+    /* Special buttons background color */
+    color: white;
+}
+
+.special-btn:hover {
+    background-color: darkred;
+    /* Hover effect for special buttons */
+}
+
+/* Equal button */
+.equal-btn {
+    background-color: rgb(79, 139, 252);
+    /* Equal button background color */
+    color: white;
+}
+
+.equal-btn:hover {
+    background-color: rgb(59, 107, 170);
+    /* Hover effect for equal button */
+}

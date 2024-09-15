@@ -1,0 +1,132 @@
+<html>
+
+<head>
+    <title> Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-content">
+            <h1 id="brandname">Online Calculator.com</h1>
+            <p id="tagline">Quick, Easy And Smart Solution Online.</p>
+        </div>
+        <img class="logo" src="calculator logo.jpg" alt="Calculator Logo">
+    </div>
+
+    <div class="sec-header">
+        <ul class="list">
+            <li><a href="#"></a><button class="buttons">Online Calculator</button></a></li>
+            <li><a href="#"></a><button class="buttons">Scientific Calculator</button></a></li>
+            <li><a href="#"></a><button class="buttons">Simple Calculator</button></a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="left">
+            <p id="content" class="content">This is a simple calculator with memory functions similar to a small
+                handheld calculator. Use this basic calculator online for math with addition, subtraction, division and
+                multiplication.</p>
+            <p id="content">The calculator includes functions for square root, percentage, pi, exponents, powers and
+                rounding. How to do repeating operations, higher powers and roots, memory and clear functions for this
+                standard calculator are explained below.</p>
+            <p id="content">Control the calculator using a mouse, keyboard or number pad, or by touch if supported by
+                your device.</p>
+            <h2 id="content">What Are the Functions on the Calculator?</h2>
+            <ul id="content">
+                <li> ÷ Division</li>
+                <li> × Multiplication</li>
+                <li> + Addition</li>
+                <li> − Subtraction</li>
+                <li> = Calculate</li>
+                <li> AC All clear</li>
+            </ul>
+        </div>
+
+        <div class="right">
+            <p id="heading">Calculator</p>
+            <div class="cal">
+                <div id="display" class="display" contenteditable="true"></div>
+                <table class="signs">
+                    <tr>
+                        <td><button class="num-btn" onclick="appendToDisplay('7')">7</button></td>
+                        <td><button class="num-btn" onclick="appendToDisplay('8')">8</button></td>
+                        <td><button class="num-btn" onclick="appendToDisplay('9')">9</button></td>
+                        <td><button class="operator-btn" onclick="appendToDisplay('/')">÷</button></td>
+                        <td><button class="operator-btn" onclick="appendToDisplay('+')">+</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="num-btn" onclick="appendToDisplay('4')">4</button></td>
+                        <td><button class="num-btn" onclick="appendToDisplay('5')">5</button></td>
+                        <td><button class="num-btn" onclick="appendToDisplay('6')">6</button></td>
+                        <td><button class="operator-btn" onclick="appendToDisplay('*')">×</button></td>
+                        <td><button class="operator-btn" onclick="appendToDisplay('-')">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="num-btn" onclick="appendToDisplay('1')">1</button></td>
+                        <td><button class="num-btn" onclick="appendToDisplay('2')">2</button></td>
+                        <td><button class="num-btn" onclick="appendToDisplay('3')">3</button></td>
+                        <td><button class="special-btn" onclick="clearDisplay()">AC</button></td> <!-- Special Button -->
+                        <td><button class="operator-btn" onclick="appendToDisplay('(')">(</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="num-btn" onclick="appendToDisplay('0')">0</button></td>
+                        <td><button class="num-btn" onclick="appendToDisplay('.')">.</button></td>
+                        <td><button class="equal-btn" onclick="calculateResult()">=</button></td> <!-- Equal Button -->
+                        <td><button class="special-btn" onclick="clearLast()">C</button></td> <!-- Special Button -->
+                        <td><button class="operator-btn" onclick="appendToDisplay(')')">)</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let display = document.getElementById('display');
+
+        // Function to append values to the display
+        function appendToDisplay(value) {
+            if (display.innerText === 'Error') {
+                display.innerText = ''; // Clear error on new input
+            }
+            display.innerText += value;
+            display.focus(); // Maintain focus to handle cursor
+        }
+
+        // Function to clear the entire display
+        function clearDisplay() {
+            display.innerText = '';
+            display.focus(); // Maintain focus to handle cursor
+        }
+
+        // Function to clear the last character
+        function clearLast() {
+            let text = display.innerText;
+            display.innerText = text.slice(0, -1);
+            display.focus(); // Maintain focus to handle cursor
+        }
+
+        // Function to calculate the result
+        function calculateResult() {
+            try {
+                display.innerText = eval(display.innerText) || ''; // Ensure result is not null
+            } catch (error) {
+                display.innerText = 'Error';
+            }
+            display.focus(); // Maintain focus to handle cursor
+        }
+
+        // Handle keydown events for backspace
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Backspace') {
+                event.preventDefault();
+                clearLast();
+            }
+        });
+
+        // Prevent paste to avoid invalid characters
+        display.addEventListener('paste', function(event) {
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>
